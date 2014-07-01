@@ -1,1 +1,5 @@
 <p><%= render @status %></p>
+<%= render @status.comments %>
+<% if user_signed_in? %>
+  <p><%= link_to 'Leave a comment', new_status_comment_path(@status) %></p>
+<% end %>
